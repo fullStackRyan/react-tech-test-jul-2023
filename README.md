@@ -1,46 +1,34 @@
-# Getting Started with Create React App
+# React Tech Test - July 2023
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Setup
 
-## Available Scripts
+In the command-line:
 
-In the project directory, you can run:
+- run `yarn` to install node_modules
+- add `.env` to the root directory and add the neccessary variables. An example of which variables you need can be found in the `.env-example`
+- run `yarn start` to load the application into the browser
 
-### `yarn start`
+## Task
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Copy image as much as possible within 4 hours.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![Image trying to recreate](./src/assets/ui.png)
 
-### `yarn test`
+## Notes / Improvements
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- If I had more time I would have done more testing.
+- I would review the Types in more detail.
+- I would have liked to have had more time to add more functionality.
+- As there were no API docs I have to make some assumptions based on the response from the API; for example:
+  - "Expertise and Reputation" and "Client Satisfaction", I assumed score is out of 1000.
+  - "trends" and "tiers" are two examples of potential unions or enums. I do not have an exhaustive list of possible values.
 
-### `yarn build`
+## Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- React
+- TypeScript
+- Redux
+- Tailwind CSS
+- CSS Grid & Flexbox
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+The above tech stack choice is pretty standard with perhaps the exception of Tailwind CSS. I have seen Tailwind CSS pop up more and more on job specifications so wanted the opporunity to familarise myself with the technology

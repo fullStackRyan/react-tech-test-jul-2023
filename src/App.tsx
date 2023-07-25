@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import RankingsPage from "./pages/RankingsPage";
+import Filters from "./components/Filters";
+import SelectInput from "./components/SelectInput";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="m-4 md:m-10">
+      <div className="flex justify-end my-2">
+        <SelectInput />
+      </div>
+      <div className="grid grid-cols-[1fr,5fr]">
+        <div className="">
+          <Filters />
+        </div>
+        <div className="">
+          <RankingsPage />
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
