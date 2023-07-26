@@ -8,6 +8,10 @@ In the command-line:
 - add `.env` to the root directory and add the neccessary variables. An example of which variables you need can be found in the `.env-example`
 - run `yarn start` to load the application into the browser
 
+## Tests
+
+- run `yarn test` to run the tests
+
 ## Task
 
 Copy image as much as possible within 4 hours.
