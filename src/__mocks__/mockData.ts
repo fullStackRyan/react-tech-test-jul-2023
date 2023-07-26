@@ -1,4 +1,6 @@
-export const mockRankings = [
+import { Ranking } from "../types/Types";
+
+export const mockRankings: Ranking[] = [
   {
     id: "1",
     firm: {

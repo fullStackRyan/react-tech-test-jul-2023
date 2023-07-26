@@ -5,6 +5,7 @@ import { AppDispatch } from "../redux/store";
 import { getRankings } from "../redux/rankings/rankingSlice";
 import FirmCard from "../components/FirmCard";
 import { useFilteredFirms } from "../hooks/useFilteredFirms";
+import { Ranking } from "../types/Types";
 
 function RankingsPage() {
   const {
@@ -19,7 +20,7 @@ function RankingsPage() {
     dispatch(getRankings());
   }, [dispatch]);
 
-  const filteredRankings = useFilteredFirms(
+  const filteredRankings: Ranking[] = useFilteredFirms(
     rankings,
     expertiseAndReputationRating,
     clientSatisfactionRating

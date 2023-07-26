@@ -24,7 +24,8 @@ function FirmCard({ ranking }: Props) {
     <div className={gridStyles}>
       <div className=" flex items-center justify-center md:row-span-2">
         <div className="border-2 rounded-full border-black bg-black text-legalBlue flex items-center justify-center h-3 w-3 md:h-6 md:w-6">
-          {position + 1}
+          {/* I am not sure what the logic is meant to be behind position so I've opted for position plus one */}
+          {position + 1} 
         </div>
       </div>
       <div className="text-lg font-bold col-span-20 flex items-center  ">
