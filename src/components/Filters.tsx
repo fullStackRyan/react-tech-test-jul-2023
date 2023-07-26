@@ -1,7 +1,7 @@
 import RadioButtonGroup from "./RadioButtonGroup";
 import StarGroup from "./StarGroup";
 
-const Filters: React.FC = () => {
+const Filters = () => {
   return (
     <div className="m-2">
       <RadioButtonGroup />

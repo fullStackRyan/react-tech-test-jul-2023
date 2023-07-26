@@ -38,4 +38,4 @@ Copy image as much as possible within 4 hours.
 - Tailwind CSS
 - CSS Grid & Flexbox
 
-The above tech stack choice is pretty standard with perhaps the exception of Tailwind CSS. I have seen Tailwind CSS pop up more and more on job specifications so wanted the opporunity to familarise myself with the technology
+The above tech stack choice is pretty standard with perhaps the exception of Tailwind CSS. I have seen Tailwind CSS pop up more and more on job specifications so wanted the opporunity to familarise myself with the library
