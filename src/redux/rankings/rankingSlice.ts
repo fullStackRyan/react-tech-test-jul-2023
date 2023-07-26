@@ -1,11 +1,14 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import { extractErrorMessage } from "../../utils/extractErrorMessage";
 import rankingService from "./rankingService";
 import { RankingState } from "../../types/Types";
+import { RatingPayload } from "../../types/Types";
 
 const initialState: RankingState = {
-  rankings: null,
+  rankings: [],
   isLoading: false,
+  expertiseAndReputationRating: undefined,
+  clientSatisfactionRating: undefined,
 };
 
 export const getRankings = createAsyncThunk(
@@ -22,7 +25,18 @@ export const getRankings = createAsyncThunk(
 export const rankingSlice = createSlice({
   name: "ranking",
   initialState,
-  reducers: {},
+  reducers: {
+    updateRatings: (state, action: PayloadAction<RatingPayload>) => {
+      if (action.payload.expertiseAndReputationRating !== undefined) {
+        state.expertiseAndReputationRating =
+          action.payload.expertiseAndReputationRating;
+      }
+      if (action.payload.clientSatisfactionRating !== undefined) {
+        state.clientSatisfactionRating =
+          action.payload.clientSatisfactionRating;
+      }
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getRankings.pending, (state) => {
@@ -37,5 +51,7 @@ export const rankingSlice = createSlice({
       });
   },
 });
+
+export const { updateRatings } = rankingSlice.actions;
 
 export default rankingSlice.reducer;

@@ -11,9 +11,11 @@ import {
   RegionAreaID,
   RegionGroupID,
 } from "../../types/Types";
+import { convertToScaleOfFive } from "../../utils/convertToScaleOfFive";
 
-const API_URL =
-  "https://legalease-code-test-api.infra.eu-west-1.wearespork.net/api/v1/rankings?regionId=170&practiceAreaId=326";
+if (!process.env.REACT_APP_API_KEY) {
+  throw new Error("Missing necessary environment variable REACT_APP_API_KEY!");
+}
 
 const transformData = (data: any): Ranking => {
   return {
@@ -52,8 +54,12 @@ const transformData = (data: any): Ranking => {
           },
           booking: firmRegion.booking,
           crossBorderCapability: firmRegion.crossBorderCapability,
-          clientSatisfactionRating: firmRegion.clientSatisfactionRating,
-          expertiseAndReputationRating: firmRegion.expertiseAndReputationRating,
+          clientSatisfactionRating: convertToScaleOfFive(
+            firmRegion.clientSatisfactionRating
+          ),
+          expertiseAndReputationRating: convertToScaleOfFive(
+            firmRegion.expertiseAndReputationRating
+          ),
         })
       ),
     },
@@ -65,14 +71,16 @@ const transformData = (data: any): Ranking => {
 };
 
 const getRankings = async () => {
-  const API_KEY = "L5e9X1a9gswH3x7ynz9cKyDnsgvqJEen";
   const config = {
     headers: {
-      "x-api-key": API_KEY,
+      "x-api-key": process.env.REACT_APP_API_KEY,
     },
   };
 
-  const response = await axios.get(API_URL, config);
+  const response = await axios.get(
+    "https://legalease-code-test-api.infra.eu-west-1.wearespork.net/api/v1/rankings?regionId=170&practiceAreaId=326",
+    config
+  );
 
   const rankings: Ranking[] = response.data.map(transformData);
 

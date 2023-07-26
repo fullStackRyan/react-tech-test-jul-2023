@@ -5,7 +5,7 @@ type Props = {
   ranking: Ranking;
 };
 
-function FirmCard2({ ranking }: Props) {
+function FirmCard({ ranking }: Props) {
   const {
     firm: {
       name,
@@ -55,4 +55,4 @@ function FirmCard2({ ranking }: Props) {
   );
 }
 
-export default FirmCard2;
+export default FirmCard;

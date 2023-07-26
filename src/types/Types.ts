@@ -54,8 +54,15 @@ export type RegionArea = {
 };
 
 export type RankingState = {
-  rankings: Ranking[] | null;
+  rankings: Ranking[];
   isLoading: boolean;
+  expertiseAndReputationRating?: number | undefined;
+  clientSatisfactionRating?: number | undefined;
+};
+
+export type RatingPayload = {
+  expertiseAndReputationRating?: number | undefined;
+  clientSatisfactionRating?: number | undefined;
 };
 
 export type RankingID = string;
